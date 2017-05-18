@@ -23,7 +23,7 @@ Captures Key Management statistics from Amazon CloudWatch and displays them in t
 | **accounts** | | Fields under this section can be repeated for multiple accounts config |  |
 | | awsAccessKey | AWS Access Key |  |
 | | awsSecretKey | AWS Secret Key |  |
-| | displayAccountName | Display name used in metric path | "MyAWSKMSDB" |
+| | displayAccountName | Display name used in metric path | "MyAWSKMS" |
 | | regions | Regions where AWS-KMS is registered | **Allowed values:**<br/>"ap-southeast-1",<br/>"ap-southeast-2",<br/>"ap-northeast-1",<br/>"eu-central-1",<br/>"eu-west-1",<br/>"us-east-1",<br/>"us-west-1",<br/>"us-west-2",<br/>"sa-east-1" |
 | **credentialsDecryptionConfig** | ----- | ----- | ----- |
 | | enableDecryption | If set to "true", then all aws credentials provided (access key and secret key) will be decrypted - see AWS Credentials Encryption section |  |
