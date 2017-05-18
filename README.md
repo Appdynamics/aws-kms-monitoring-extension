@@ -117,7 +117,7 @@ To set an encrypted awsAccessKey and awsSecretKey in config.yaml, follow the ste
 ##Metrics
 Typical metric path: **Application Infrastructure Performance|\<Tier\>|Custom Metrics|AWS KMS|\<Account Name\>|\<Region\>|Table Name|\<table name\>** followed by the metrics defined in the link below:
 
-- [KMS Metrics](http://docs.aws.amazon.com/kms/latest/developerguide/overview.html)
+- [KMS Metrics](http://docs.aws.amazon.com/kms/latest/developerguide/monitoring-cloudwatch.html)
 
 ##Contributing
 
