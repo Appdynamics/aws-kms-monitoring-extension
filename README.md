@@ -23,7 +23,7 @@ Captures Key Management statistics from Amazon CloudWatch and displays them in t
 | **accounts** | | Fields under this section can be repeated for multiple accounts config |  |
 | | awsAccessKey | AWS Access Key |  |
 | | awsSecretKey | AWS Secret Key |  |
-| | displayAccountName | Display name used in metric path | "MyAWSDynamoDB" |
+| | displayAccountName | Display name used in metric path | "MyAWSKMSDB" |
 | | regions | Regions where AWS-KMS is registered | **Allowed values:**<br/>"ap-southeast-1",<br/>"ap-southeast-2",<br/>"ap-northeast-1",<br/>"eu-central-1",<br/>"eu-west-1",<br/>"us-east-1",<br/>"us-west-1",<br/>"us-west-2",<br/>"sa-east-1" |
 | **credentialsDecryptionConfig** | ----- | ----- | ----- |
 | | enableDecryption | If set to "true", then all aws credentials provided (access key and secret key) will be decrypted - see AWS Credentials Encryption section |  |
@@ -35,10 +35,10 @@ Captures Key Management statistics from Amazon CloudWatch and displays them in t
 | | password | The proxy password (optional)  |  |
 | **metricsConfig** | ----- | ----- | ----- |
 | metricTypes | | Fields under this section can be repeated for multiple metric types override |  |
-| | metricName | The metric name | "CPUUtilization" |
+| | metricName | The metric name | "SecondsUntilKeyMaterialExpiration" |
 | | statType | The statistic type | **Allowed values:**<br/>"ave"<br/>"max"<br/>"min"<br/>"sum"<br/>"samplecount" |
 | | ----- | ----- | ----- |
-| | excludeMetrics | Metrics to exclude - supports regex | "CPUUtilization",<br/>"Swap.*" |
+| | excludeMetrics | Metrics to exclude - supports regex | "" |
 | metricsTimeRange |  |  |  |
 | | startTimeInMinsBeforeNow | The no of mins to deduct from current time for start time of query | 5 |
 | | endTimeInMinsBeforeNow | The no of mins to deduct from current time for end time of query.<br>Note, this must be less than startTimeInMinsBeforeNow | 0 |
@@ -81,7 +81,7 @@ metricsConfig:
       - metricName: "SecondsUntilKeyMaterialExpiration"
         statType: "max"
 
-    excludeMetrics: ["ReadThrottleEvents", "Returned.*"]
+    excludeMetrics: []
 
     metricsTimeRange:
       startTimeInMinsBeforeNow: 5
@@ -94,7 +94,7 @@ concurrencyConfig:
   noOfRegionThreadsPerAccount: 3
   noOfMetricThreadsPerRegion: 3
 
-metricPrefix: "Custom Metrics|AWs KMS|"
+metricPrefix: "Custom Metrics|AWS KMS|"
 ~~~
 
 ###AWS Credentials Encryption
@@ -117,15 +117,15 @@ To set an encrypted awsAccessKey and awsSecretKey in config.yaml, follow the ste
 ##Metrics
 Typical metric path: **Application Infrastructure Performance|\<Tier\>|Custom Metrics|AWS KMS|\<Account Name\>|\<Region\>|Table Name|\<table name\>** followed by the metrics defined in the link below:
 
-- [KMS Metrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/dynamo-metricscollected.html)
+- [KMS Metrics](http://docs.aws.amazon.com/kms/latest/developerguide/overview.html)
 
 ##Contributing
 
-Always feel free to fork and contribute any changes directly via [GitHub](https://github.com/Appdynamics/aws-dynamodb-monitoring-extension).
+Always feel free to fork and contribute any changes directly via [GitHub](https://github.com/Appdynamics/aws-kms-monitoring-extension).
 
 ##Community
 
-Find out more in the [AppSphere](https://www.appdynamics.com/community/exchange/extension/aws-dynamodb-monitoring-extension) community.
+Find out more in the [AppSphere](https://www.appdynamics.com/community/exchange/extension/aws-kms-monitoring-extension) community.
 
 ##Support
 
