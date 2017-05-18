@@ -9,7 +9,7 @@ accounts:
     #
     regions: ["us-east-1"]
     
-credentialsDecryptio
+credentialsDecryption
     enableDecryption: "false"
     decryptionKey:
     
