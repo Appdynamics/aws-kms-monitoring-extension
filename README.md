@@ -145,9 +145,9 @@ Always feel free to fork and contribute any changes directly via [GitHub](https:
 ## Version
    |Name|Version|
    |--------------------------|------------|
-   |Extension Version         |1.1.1       |
+   |Extension Version         |1.1.2       |
    |Controller Compatibility  |4.5 or Later|
    |Machine Agent             |4.5.13+     |
-   |Last Update               |01/21/2021  |
+   |Last Update               |09/06/2021  |
 
 List of changes to this extension can be found [here](https://github.com/Appdynamics/aws-kms-monitoring-extension/blob/master/CHANGELOG.md)
