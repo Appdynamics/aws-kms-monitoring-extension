@@ -1,6 +1,6 @@
-#AWS KMS Monitoring Extension
+# AWS KMS Monitoring Extension
 
-##Use Case
+## Use Case
 Captures Key Management statistics from Amazon CloudWatch and displays them in the AppDynamics Metric Browser.
 
 **Note : By default, the Machine agent can only send a fixed number of metrics to the controller. This extension potentially reports thousands of metrics, so to change this limit, please follow the instructions mentioned [here](https://docs.appdynamics.com/display/PRO40/Metrics+Limits).** 
@@ -17,14 +17,14 @@ Captures Key Management statistics from Amazon CloudWatch and displays them in t
 * If you are seeing warning messages while starting the Machine Agent, update the http-client and http-core JARs in {MACHINE_AGENT_HOME}/monitorsLibs to httpclient-4.5.9 and httpcore-4.4.12 to make this warning go away.
 * To make AWS extensions work on Machine Agent < 4.5.13: The http-client and http-core JARs in {MACHINE_AGENT_HOME}/monitorsLibs has to be manually be updated to httpclient-4.5.9 and httpcore-4.4.12
 
-##Installation
+## Installation
 
 1. Run 'mvn clean install' from aws-kms-monitoring-extension
 2. Copy and unzip AWSKMSMonitor-\<version\>.zip from 'target' directory into \<machine_agent_dir\>/monitors/
 3. Edit config.yml file in AWSKMSMonitor and provide the required configuration (see Configuration section)
 4. Restart the Machine Agent.
 
-##Configuration
+## Configuration
 In order to use the extension, you need to update the config.yml file that is present in the extension folder. The following is a step-by-step explanation of the configurable fields that are present in the `config.yml` file.
 
 1. If SIM is enabled, then use the following metricPrefix - 
@@ -99,11 +99,11 @@ In order to use the extension, you need to update the config.yml file that is pr
    
    **All these metric properties are optional, and the default value shown in the table is applied to the metric(if a property has not been specified) by default.**
 
-###Config.yml
+### Config.yml
 Please avoid using tab (\t) when editing yaml files. Please copy all the contents of the config.yml file and go to [Yaml Validator](http://www.yamllint.com/) . On reaching the website, paste the contents and press the “Go” button on the bottom left.                                                       
 If you get a valid output, that means your formatting is correct and you may move on to the next step.
 
-##Metrics
+## Metrics
 Typical metric path: **Application Infrastructure Performance|\<Tier\>|Custom Metrics|AWS KMS|\<Account Name\>|\<Region\>|KeyId|<key-id>** followed by the metrics defined in the link below:
 
 - [KMS Metrics](http://docs.aws.amazon.com/kms/latest/developerguide/monitoring-cloudwatch.html)
@@ -138,7 +138,7 @@ Please provide the following in order for us to assist you better.
    
 For any support related questions, you can also contact [help@appdynamics.com](mailto:help@appdynamics.com).
 
-##Contributing
+## Contributing
 
 Always feel free to fork and contribute any changes directly via [GitHub](https://github.com/Appdynamics/aws-kms-monitoring-extension).
 
